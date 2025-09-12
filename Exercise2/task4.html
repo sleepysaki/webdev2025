@@ -1,0 +1,44 @@
+<!-- Use HTML/CSS/JavaScript to create a form. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple form</title>
+</head>
+<body>
+    <h2>Sign up</h2>
+    <form onsubmit="return checkIdenticalPassword()">
+        <label>Username: </label><br>
+        <input type="text">
+        <label>Password:</label>
+        <input type="password" id="pwd1"><br>
+        <label>Re-type Password:</label>
+        <input type="password" id="pwd2"><br><br>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+    <script>
+        function checkIdenticalPassword() {
+            let pwd1 = document.getElementById("pwd1").value;
+            let pwd2 = document.getElementById("pwd2").value;
+
+            if (pwd1 === "" || pwd2 === "") {
+                alert("Password fields cannot be empty!");
+                return false;
+            }
+
+            if (pwd1 === pwd2) {
+                alert("Password created successfully!");
+                return true;  
+            } else {
+                alert("Passwords do not match. Please try again.");
+                return false; 
+            }
+        }
+    </script>
+</html>
+

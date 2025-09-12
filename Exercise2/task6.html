@@ -1,0 +1,32 @@
+<!-- Find all h1 elements that are children of a div element and apply a
+background to them:
+• Sample Input HTML File:
+<body>
+<h1>Introduction</h1>
+<div>
+<h1>About HTML</h1>
+<h1>About CSS</h1>
+</div>
+<h1>About JavaScript</h1>
+</body>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example</title>
+  <style>
+    div > h1 {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>Introduction</h1>
+  <div>
+    <h1>About HTML</h1>
+    <h1>About CSS</h1>
+  </div>
+  <h1>About JavaScript</h1>
+</body>
+</html>

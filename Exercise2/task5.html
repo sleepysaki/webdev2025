@@ -1,0 +1,48 @@
+<!-- Write a JavaScript program to calculate multiplication and division of
+two numbers: HTML form should be used to get inputs from user -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiply and Divide</title>
+</head>
+<body>
+    <h3 style="text-align:center;">Multiply and Divide two numbers:</h3>
+
+    <form>
+        <label>1st Number: </label>
+        <input type="text" id="num1"><br><br> 
+        <!--First br move to next line, 2nd one move to the next -> Add blank line -->
+
+        <label>2nd Number: </label>
+        <input type="text" id="num2"><br><br>
+
+        <input type="button" value="Multiply" onclick="multiply()">
+        <input type="button" value="Divide" onclick="divide()">
+    </form>
+
+    <p>The Result is : <span id="result"></span></p>
+
+    <script>
+        function multiply() {
+            let n1 = parseFloat(document.getElementById("num1").value);
+            let n2 = parseFloat(document.getElementById("num2").value);
+            let result = n1 * n2;
+            document.getElementById("result").innerText = result;
+        }
+
+        function divide() {
+            let n1 = parseFloat(document.getElementById("num1").value);
+            let n2 = parseFloat(document.getElementById("num2").value);
+            if (n2 === 0) {
+                document.getElementById("result").innerText = "Cannot divide by zero!";
+            } else {
+                let result = n1 / n2;
+                document.getElementById("result").innerText = result;
+            }
+        }
+    </script>
+</body>
+</html>

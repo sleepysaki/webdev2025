@@ -1,0 +1,33 @@
+<!--Attach a function to the blur event. The blur event occurs when the
+following <input> Field1 loses focus:
+<body>
+<form>
+<input id="field1" type="text" value="Field 1">
+<input id="field2" type="text" value="Field 2">
+</form>
+</body>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blur Event</title>
+  <script>
+    // Wait until the page loads
+    window.onload = function() {
+      // Get the input field by ID
+      var field1 = document.getElementById("field1");
+
+      // Attach blur event
+      field1.addEventListener("blur", function() {
+        alert("Field1 lost focus!");
+      });
+    };
+  </script>
+</head>
+<body>
+  <form>
+    <input id="field1" type="text" value="Field 1">
+    <input id="field2" type="text" value="Field 2">
+  </form>
+</body>
+</html>
