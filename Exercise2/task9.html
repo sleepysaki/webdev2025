@@ -9,3 +9,37 @@ paragraph. Following are the sample data:
 <div id="log"></div>
 </body>
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Click Interval</title>
+</head>
+<body>
+  <h1>Heading1</h1>
+  <h2>Heading2</h2>
+  <p id="para">Paragraph</p>
+  <button>Button</button>
+  <div id="log"></div>
+
+  <script>
+    let lastClickTime = null;
+
+    document.getElementById("para").addEventListener("click", function () {
+      let now = Date.now(); // current time in ms
+      let logDiv = document.getElementById("log");
+
+      if (lastClickTime === null) {
+        logDiv.innerHTML = "First click recorded!";
+      } else {
+        let diff = now - lastClickTime;
+        logDiv.innerHTML = "Time between clicks: " + diff + " ms";
+      }
+
+      lastClickTime = now; // update last click time
+    });
+  </script>
+</body>
+</html>

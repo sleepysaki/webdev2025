@@ -5,3 +5,37 @@ pages:
 • If a link is visited, then its color becomes red
 • Change the color of the links to green when the mouse is over
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: green;
+            text-decoration: none;
+        }
+
+        a {
+            display: block;           /* put links on separate lines */
+            margin: 5px 0;
+        }
+    </style>
+</head>
+    <!--target=blank -> open link in new tab / window -->
+  <a href="https://chunithm.sega.com" target="_blank">Chunithm</a>
+  <a href="https://maimai.sega.com" target="_blank">Maimai</a>
+  <a href="https://ongeki.sega.jp" target="_blank">Ongeki</a>
+</body>
+</html>
