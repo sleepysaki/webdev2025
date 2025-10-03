@@ -1,0 +1,57 @@
+<!-- 
+Use HTML/CSS and JS to create a *Login form*. The form should contain the following requrements and strictly comply the rules below:
+
+- Input fields for *Username*, *Password*.
+- A button named “*Login*”
+
+Rules:
+
+- Use JS to check the validity of password.
+- The password must contain at least 1 uppercase and no special character. Valid characters are a-z, A-Z, 0-9.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <form onsubmit="return checkPasswordValidity()">
+    <label>Username:</label>
+    <input type="text" id="username" required><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="pwd" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    function checkPasswordValidity() {
+      const pwd = document.getElementById("pwd").value;
+    
+      // The test() method tests for a match in a string. True if found, otherwise false.
+      // Rule 1: Must contain at least 1 uppercase
+      const hasUppercase = /[A-Z]/.test(pwd);
+
+      // Rule 2: Only allow a-z, A-Z, 0-9
+      // ^ + $: start + end of the string
+      const validChars = /^[A-Za-z0-9]+$/.test(pwd);
+
+      if (!hasUppercase) {
+        alert("Password must contain at least one uppercase letter.");
+        return false;
+      }
+      if (!validChars) {
+        alert("Password must not contain special characters. Only a-z, A-Z, 0-9 allowed.");
+        return false;
+      }
+
+      alert("Login successful!");
+      return true;
+    }
+  </script>
+</body>
+</html>
